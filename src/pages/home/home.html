@@ -1,18 +1,57 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color='navbarColor'>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title text-center>Мой штурман</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <div class="content">
+    <h3 class="title">Быстрый вызов водителя</h3>
+    <div class="sos-block">
+      <a href="tel:+74957277570"> <img src="../../assets/imgs/sos_btn_1.png"></a>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    </div>
+    <div class="main">
+      <div class="actions">
+        <div class="action" (click)="goToDrivers()">
+          <div class="img-action">
+            <img src="../../assets/imgs/add-list.png">
+          </div>
+          <div class="action-title">
+            Наши водители
+          </div>
+        </div>
+        <div class="action" (click)="goToStock()">
+          <div class="img-action">
+            <img src="../../assets/imgs/Ecommerce-Price-Tag-icon.png">
+          </div>
+          <div class="action-title">
+           Акции
+          </div>
+        </div>
+        <div class="action" (click)="goToRequest()">
+          <div class="img-action">
+            <img src="../../assets/imgs/envelop.png">
+          </div>
+          <div class="action-title">
+            Заявка
+          </div>
+        </div>
+        <div class="action" (click)="goToPrices()">
+          <div class="img-action">
+            <img src="../../assets/imgs/dots.png">
+          </div>
+          <div class="action-title">
+          Наши цены
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+  </div>
+
 </ion-content>

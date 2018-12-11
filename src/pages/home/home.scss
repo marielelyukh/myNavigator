@@ -1,3 +1,50 @@
 page-home {
+  .title {
+    text-align: center;
+  }
+  .sos-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 200px;
+    }
+  }
+  .main{
+    display: flex;
+    align-items: center;
+    .actions{
+      margin: auto;
+      width: 310px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      .action{
+        background-color: #0C151D;
+        align-items: center;
+        height: 140px;
+        width: 140px;
+        margin: 10px 0 10px 0;
+        padding: 15px;
+        box-shadow: 2px 2px 1px #0D1821;
+        .img-action{
+          text-align: center;
+          img {
+            width: 70px;
+          }
+        }
+        .action-title{
+          margin-top: 10px;
+          text-transform: uppercase;
+          text-align: center;
+          color: white;
+          font-size: 14px;
+          height: 30px;
+        }
+      }
+    }
+  }
 
 }

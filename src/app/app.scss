@@ -14,3 +14,37 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-header{
+  border-bottom: 1px solid white;
+}
+ion-content {
+  background-color: #070809 !important;
+}
+
+ion-item{
+  background-color: #070809 !important;
+  color: white;
+}
+ion-item h2 {
+  color: #E4C345;
+
+}
+ion-item h3 {
+  color: white;
+
+}
+ion-grid {
+
+  ion-col{
+    border: 2px solid white;
+    width: 130px !important;
+  }
+}
+ion-item button{
+  background-color: #070809 !important;
+  color: white;
+}
+.content{
+  color: white;
+  padding: 10px;
+}

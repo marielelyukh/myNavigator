@@ -1,23 +1,31 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color='navbarColor'>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Контакты</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
+<ion-content padding>
+  <div class="content">
+    <div class="info">
+      <p>
+        +7 (495) 727-75-70
+      </p>
+      <p>
+        +7 (926) 324-33-74
+      </p>
+      <p>
+        <span>ИП</span> "Андриаш".
+      </p>
+      <p>
+        <span>ИНН:</span> 501709230930.
+      </p>
+      <p>
+        <span>ОГРНИП:</span> 317502900052772.
+      </p>
+    </div>
   </div>
+
 </ion-content>

@@ -1,0 +1,39 @@
+page-request {
+  ion-input input{
+    color: white !important;
+  }
+ .text-input{
+   .text-input::-moz-placeholder {
+     color: white;
+   }
+
+   .text-input:-ms-input-placeholder {
+     color: white;
+   }
+
+   .text-input::-webkit-input-placeholder {
+     color: white;
+   }
+ }
+
+  .btn-block{
+    text-align: center;
+  }
+  .item-ios.item-block .item-inner {
+    border: none;
+  }
+  .list-md .item-block .item-inner {
+    border: none;
+  }
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+    border: none;
+    margin-top: 10px;
+  }
+  .list-md > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+    border: none;
+    margin-top: 10px;
+  }
+  ion-item{
+    border: 1px solid white !important;
+  }
+}
