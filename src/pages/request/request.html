@@ -19,6 +19,10 @@
       </ion-item>
     </ion-list>
 
+    <div class="error-block" *ngIf="this.errorText">
+      <p>Пожалуйста, заполните пустые поля.</p>
+    </div>
+
     <div class="btn-block">
       <button (click)="sendToEmail(sendData)" ion-button color="custom">Отправить</button>
     </div>

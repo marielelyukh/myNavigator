@@ -19,11 +19,16 @@ export class RequestPage {
     phone: '',
     name: ''
   };
+  public errorText: boolean;
 
   constructor(private navCtrl: NavController, private http: HttpClient) {
   }
 
   sendToEmail(){
+    if (!this.user.phone || !this.user.name) {
+      this.errorText = true;
+      return false;
+    }
     let params = new HttpParams();
     params = params.append('phone', this.user.phone);
     params = params.append('name', this.user.name);

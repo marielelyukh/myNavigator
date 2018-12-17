@@ -2,6 +2,13 @@ page-request {
   ion-input input{
     color: white !important;
   }
+  .error-block{
+    text-align: center;
+  }
+  .error-block p{
+    color: red;
+    font-size: 16px;
+  }
  .text-input{
    .text-input::-moz-placeholder {
      color: white;
