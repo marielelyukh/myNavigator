@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color='navbarColor'>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Наши водители</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="content">
+    <ion-card>
+      <img [src]="myParam.photo"/>
+      <ion-card-content>
+        <ion-card-title>
+         Имя: {{myParam.name}}
+        </ion-card-title>
+        <p>
+          Возраст: {{myParam.age}}
+        </p>
+        <p>
+          Стаж: {{myParam.exp}}
+        </p>
+        <p>
+          Категория: {{myParam.category}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="btn-block">
+      <button ion-button color="custom" (click)="orderDriver(myParam.name)">Заказать</button>
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,4 +1,7 @@
-page-request {
+page-requestDriver{
+  h2{
+    text-align: center;
+  }
   ion-input input{
     color: white !important;
   }
@@ -9,19 +12,19 @@ page-request {
     color: red;
     font-size: 16px;
   }
- .text-input{
-   .text-input::-moz-placeholder {
-     color: white;
-   }
+  .text-input{
+    .text-input::-moz-placeholder {
+      color: white;
+    }
 
-   .text-input:-ms-input-placeholder {
-     color: white;
-   }
+    .text-input:-ms-input-placeholder {
+      color: white;
+    }
 
-   .text-input::-webkit-input-placeholder {
-     color: white;
-   }
- }
+    .text-input::-webkit-input-placeholder {
+      color: white;
+    }
+  }
 
   .btn-block{
     text-align: center;

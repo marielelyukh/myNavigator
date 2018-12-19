@@ -9,6 +9,7 @@
 
 <ion-content padding>
   <div class="content">
+    <h2>Заказ услуги "Трезвый водитель"</h2>
     <h3>Личные данные</h3>
     <ion-list>
       <ion-item>
@@ -32,34 +33,7 @@
       <ion-item>
         <ion-input [(ngModel)]="user.address_to"  [type]="text" class="text-input" placeholder="Куда" ></ion-input>
       </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="user.time"  [type]="text" class="text-input" placeholder="Укажите время" ></ion-input>
-      </ion-item>
     </ion-list>
-    <h3>Данные автомобиля</h3>
-    <ion-list>
-      <ion-item>
-        <ion-input [(ngModel)]="user.company"  [type]="text" class="text-input" placeholder="Марка" ></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="user.model"  [type]="text" class="text-input" placeholder="Модель" ></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="user.number"  [type]="text" class="text-input" placeholder="Гос. номер" ></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="user.category"  [type]="text" class="text-input" placeholder="Категория" ></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input [(ngModel)]="user.other_info"  [type]="text" class="text-input" placeholder="Дополнительная информация" ></ion-input>
-      </ion-item>
-    </ion-list>
-
 
     <div class="error-block" *ngIf="this.errorText">
       <p>Пожалуйста, заполните пустые поля.</p>
