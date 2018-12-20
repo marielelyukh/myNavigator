@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { HttpClient, HttpParams} from '@angular/common/http';
 import { HomePage } from '../home/home';
 
+
 import { Geolocation } from '@ionic-native/geolocation';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
+
 
 
 
@@ -24,7 +27,7 @@ export declare interface sendCredentials {
   selector: 'page-request',
   templateUrl: 'request.html'
 })
-export class RequestPage {
+export class RequestPage implements OnInit {
   public user: sendCredentials = {
     phone: '',
     name: '',
@@ -38,10 +41,14 @@ export class RequestPage {
     other_info: ''
   };
   public errorText: boolean;
+  public lng: number;
+  public lat: number;
 
-  constructor(private navCtrl: NavController, private http: HttpClient, private geolocation: Geolocation) {
+  constructor(private navCtrl: NavController, private http: HttpClient, private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder) {
   }
-
+  ngOnInit() {
+    this.getLocation();
+  }
   sendToEmail(){
     if (!this.user.phone || !this.user.name) {
       this.errorText = true;
@@ -69,18 +76,28 @@ export class RequestPage {
   }
   getLocation(){
     this.geolocation.getCurrentPosition().then((resp) => {
-      console.log(resp)
-      // resp.coords.latitude
-      // resp.coords.longitude
+      this.lat = resp.coords.latitude;
+      this.lng = resp.coords.longitude;
+      console.log(this.lat, this.lng);
+      this.nativeGeocoder.reverseGeocode(this.lat, this.lng).then((resp) => {
+        this.user.address_from = (resp[0].locality + " " + resp[0].subLocality + " " + resp[0].thoroughfare + " " + resp[0].subThoroughfare)
+        console.log(this.user.address_from)
+      });
+        // .then((result: NativeGeocoderReverseResult[]) => console.log(JSON.stringify(result[0])))
+        // .catch((error: any) => console.log(error));
+
+      this.nativeGeocoder.forwardGeocode('Berlin')
+        .then((coordinates: NativeGeocoderForwardResult[]) => console.log('The coordinates are latitude=' + coordinates[0].latitude + ' and longitude=' + coordinates[0].longitude))
+        .catch((error: any) => console.log(error));
+      //Call to your logic HERE
     }).catch((error) => {
+      // alert(error);
       console.log('Error getting location', error);
     });
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data) => {
-      // data can be a set of coordinates, or an error (if an error occurred).
-      // data.coords.latitude
-      // data.coords.longitude
     });
+
   }
 
 

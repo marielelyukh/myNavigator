@@ -13,10 +13,11 @@ import { RequestPage } from '../pages/request/request';
 import { RequestDriverPage } from '../pages/request_driver/request_driver';
 import { StockPage } from '../pages/stock/stock';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation
+    Geolocation,
+    AndroidPermissions,
+    NativeGeocoder
   ]
 })
 export class AppModule {}
