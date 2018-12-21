@@ -17,9 +17,7 @@ export declare interface sendCredentials {
   address_to: string,
   time: string,
   company: string,
-  model: string,
   number: string,
-  category: string,
   other_info: string
 }
 
@@ -35,9 +33,7 @@ export class RequestPage implements OnInit {
     address_to: '',
     time: '',
     company: '',
-    model: '',
     number: '',
-    category: '',
     other_info: ''
   };
   public errorText: boolean;
@@ -61,9 +57,7 @@ export class RequestPage implements OnInit {
     params = params.append('address_to', this.user.address_to);
     params = params.append('time', this.user.time);
     params = params.append('company', this.user.company);
-    params = params.append('model', this.user.model);
     params = params.append('number', this.user.number);
-    params = params.append('category', this.user.category);
     params = params.append('other_info', this.user.other_info);
 
     console.log(this.user);
